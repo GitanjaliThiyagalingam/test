@@ -1,0 +1,43 @@
+<h2>Please fill this simple survey</h2>
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <th></th>
+            <th>Question</th> 
+            <th>Options</th> 
+            <!-- <th>Very Well</th> 
+            <th>Somewhat</th> 
+            <th>Very Little</th> 
+            <th>Not at all</th>  -->
+          <tr *ngFor="let question of questions">
+            <td>{{ question.questionId }}. </td>
+            <td>{{ question.question }}</td>
+            <!-- <td>
+                <input type="radio" name="radiogroup" [(ngModel)] = "answers[question.questionId]" value="Completely">
+                <input [checked]="options[question.id]" value="{{question.id}}-{{option.id}}" type="radio"
+      name="option{{question.id}}">
+            </td> -->
+              
+            <mat-radio-group class = "tp-radio-group" [(ngModel)] = "answers[question.questionId]">
+                <mat-radio-button class = "tp-radio-button" value="Completely">Completely</mat-radio-button>
+
+                <mat-radio-button class = "tp-radio-button" value="Very Well">Very Well</mat-radio-button>
+                <mat-radio-button class = "tp-radio-button" value="Somewhat">Somewhat</mat-radio-button>
+                <mat-radio-button class = "tp-radio-button" value="Very Little">Very Little</mat-radio-button>
+                <mat-radio-button class = "tp-radio-button" value="Not at all">Not at all</mat-radio-button>
+             </mat-radio-group>
+
+                 <!-- <div class = "tp-selected-value">
+                    Selected Season: {{answers[question.questionId]}}
+                    </div> -->
+            
+          </tr>
+        </tbody>
+      </table>
+      <button (click)="submit(answers)">Submit</button>
+    <!-- <button type="submit" [disabled]="!userForm.form.valid" 
+      class="btn btn-info">Submit</button> -->
+  <!-- </form> -->
+
+
+  
+

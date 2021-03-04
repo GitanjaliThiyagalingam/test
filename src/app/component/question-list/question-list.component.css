@@ -1,0 +1,8 @@
+.tp-radio-group {
+    
+    flex-direction: column;
+ }
+ .tp-radio-button {
+    margin: 5px;
+ }
+
